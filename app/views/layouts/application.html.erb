@@ -8,6 +8,18 @@
 </head>
 <body>
 
+<% if !user_signed_in? %>
+  <p class="sign_in"><%= link_to "Login", new_user_session_path %></p>
+  <p class="button"><%= link_to "Sign Up", new_user_registration_path %></button>
+<% end %>
+
+<% if user_signed_in? %>
+    <div class="buttons">
+      
+      <p class="button"><%= link_to 'Log Out', destroy_user_session_path %></p>
+    </div>
+<% end %> 
+
 <%= yield %>
 
 </body>
