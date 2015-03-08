@@ -1,8 +1,21 @@
 <h1>Post</h1>
 
-<h1><%= @post.title %></h1>
-<p><%= time_ago_in_words(@post.created_at) %> ago</p>
-<p><%= @post.body unless @post.body.nil? %></p>
+<div class="post_wrapper post_color">
+	<h1><%= @post.title %></h1>
+	<p><%= time_ago_in_words(@post.created_at) %> ago</p>
+	<p><%= @post.body unless @post.body.nil? %></p>
+</div>
+
+<br>
+<h2> Comments </h2>
+<p>Total <%= @post.comments.count %> comments are made on this post !!</p>
+<%= render @post.comments %>
+
+<br>
+
+<h2>New Comment</h2>
+<%= render 'comments/form' %>
+
 <br>
 <br>
 <br>

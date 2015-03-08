@@ -1,0 +1,20 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.comment_wrapper {
+	background: yellow;
+	margin-bottom: 10px;
+
+	a{
+		background: red;
+		color: white;
+		&:hover {
+			background: brown;
+		}
+	}
+}
+
+.new_comment {
+	background: pink;
+}
