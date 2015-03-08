@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 	end
 
 	def new
-		@post= Post.new
+		@post= current_user.posts.build
 	end
 
 	def show
@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		if @post = Post.create(post_params)
+		if @post = current_user.posts.create(post_params)
 			redirect_to posts_path
 		else
 			render 'new'
